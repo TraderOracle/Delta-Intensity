@@ -11,49 +11,36 @@
     using OFT.Rendering.Context;
     using OFT.Rendering.Settings;
     using OFT.Rendering.Tools;
-     
+
     [DisplayName("Delta Intensity")]
     public class DeltaIntensity : Indicator
     {
-        private IndicatorCandle prevCandle;
         private int iBigTrades = 25000;
 
         [Range(1, 100000)]
         public int Bigtrades_Threshold
-        {
-            get => iBigTrades;
-            set
-            {
-                if (value < 1)
-                    return;
-                iBigTrades = value;
-                RecalculateValues();
-            }
-        }
+        { get => iBigTrades; set { if (value < 1) return; iBigTrades = value; RecalculateValues(); } }
+
+        private readonly ValueDataSeries _Weird = new("Unusual Candle")
+        { Color = Colors.LightCoral, VisualType = VisualMode.Dots, Width = 4 };
+
+        private readonly ValueDataSeries _DeltaDivRed = new("Delta Divergence Red")
+        { Color = Colors.Red, VisualType = VisualMode.Dots, Width = 4 };
+
+        private readonly ValueDataSeries _DeltaDivGreen = new("Delta Divergence Green")
+        { Color = Colors.Lime, VisualType = VisualMode.Dots, Width = 4 };
 
         private readonly ValueDataSeries _VolSecNeg = new("Volume/Second Negative")
-        {
-            Color = Colors.Red,
-            VisualType = VisualMode.Histogram
-        };
+        { Color = Colors.Red, VisualType = VisualMode.Histogram };
 
         private readonly ValueDataSeries _VolSecPos = new("Volume/Second Positive")
-        {
-            Color = Colors.LimeGreen,
-            VisualType = VisualMode.Histogram
-        };
+        { Color = Colors.LimeGreen, VisualType = VisualMode.Histogram };
 
         private readonly ValueDataSeries _negSeries = new("Negative Delta")
-        {
-            Color = Colors.DarkOrange,
-            VisualType = VisualMode.Histogram
-        };
+        { Color = Colors.DarkOrange, VisualType = VisualMode.Histogram };
 
         private readonly ValueDataSeries _posSeries = new("Positive Delta")
-        {
-            Color = Colors.DarkGreen,
-            VisualType = VisualMode.Histogram
-        };
+        { Color = Colors.DarkGreen, VisualType = VisualMode.Histogram };
 
         public DeltaIntensity() :
             base(true)
@@ -63,6 +50,10 @@
             DataSeries.Add(_negSeries);
             DataSeries.Add(_VolSecPos);
             DataSeries.Add(_VolSecNeg);
+
+            DataSeries.Add(_Weird);
+            DataSeries.Add(_DeltaDivRed);
+            DataSeries.Add(_DeltaDivGreen);
         }
 
         protected override void OnCalculate(int bar, decimal value)
@@ -72,22 +63,17 @@
 
             var candle = GetCandle(bar);
 
-            prevCandle = candle;
             value = candle.Close;
+            var red = candle.Close < candle.Open;
+            var green = candle.Close > candle.Open;
 
             var candleSeconds = Convert.ToDecimal((candle.LastTime - candle.Time).TotalSeconds);
             if (candleSeconds is 0)
                 candleSeconds = 1;
             var volPerSecond = candle.Volume / candleSeconds;
 
-            decimal deltaPer = 0;
-            if (candle.Delta > 0 && candle.MaxDelta > 0)
-            {
-                if (candle.MinDelta > 0)
-                    deltaPer = (candle.Delta / candle.MaxDelta) * 100;
-                else
-                    deltaPer = (candle.Delta / candle.MinDelta) * 100;
-            }
+            var deltaPer = candle.Delta > 0 ? (candle.Delta / candle.MaxDelta) : (candle.Delta / candle.MinDelta);
+
             var deltaIntense = Math.Abs((candle.Delta * deltaPer) * volPerSecond);
             var deltaShaved = candle.Delta * deltaPer;
 
@@ -105,6 +91,11 @@
                 else
                     _negSeries[bar] = deltaShaved * -1;
             }
+
+            if (candle.Delta > 0 && red)
+              _DeltaDivRed[bar] = 500;
+            if (candle.Delta < 0 && green)
+              _DeltaDivGreen[bar] = 500;
 
         }
 
