@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\David\\Documents\\Delta-Intensity\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DD122955-0B8E-4394-8937-1A643C0B8179}|DeltaIntensity.csproj|c:\\users\\david\\documents\\delta-intensity\\deltaintensity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD122955-0B8E-4394-8937-1A643C0B8179}|DeltaIntensity.csproj|solutionrelative:deltaintensity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DeltaIntensity.cs",
+              "DocumentMoniker": "C:\\Users\\David\\Documents\\Delta-Intensity\\DeltaIntensity.cs",
+              "RelativeDocumentMoniker": "DeltaIntensity.cs",
+              "ToolTip": "C:\\Users\\David\\Documents\\Delta-Intensity\\DeltaIntensity.cs",
+              "RelativeToolTip": "DeltaIntensity.cs",
+              "ViewState": "AQIAADoAAAAAAAAAAAAAAEsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-21T19:56:13.44Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DeltaIntensity
-build_property.ProjectDir = C:\Users\mitch\source\repos\DeltaIntensity\
+build_property.ProjectDir = C:\Users\David\Documents\Delta-Intensity\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

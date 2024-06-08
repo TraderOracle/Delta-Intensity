@@ -23,7 +23,7 @@
       <HintPath>..\..\..\..\..\Program Files (x86)\ATAS Platform\OFT.Rendering.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore">
-      <HintPath>..\..\..\..\..\Windows\WinSxS\x86_presentationcore_31bf3856ad364e35_10.0.19200.884_none_7b770c589ff732d5\PresentationCore.dll</HintPath>
+      <HintPath>..\..\..\..\Windows\assembly\GAC_64\PresentationCore\3.0.0.0__31bf3856ad364e35\PresentationCore.dll</HintPath>
     </Reference>
   </ItemGroup>
 

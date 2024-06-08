@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "5E3oAmLLMMILcRnc9MCGgRj3kMNilGnw8wPs3JgubLoo6Yp8SmCZ4dIUAFt6pCGZTuOYkEVogSdNtloqVXYjtw==",
+  "dgSpecHash": "rdL6DPO8TSTbZ6Z8o/0yS9W+Fh3VCk1xwoh8e/NzMj+C66tN9sK6tNpoD2Yr33Qlx+17ac0vmRNGS35hhEPw0w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mitch\\source\\repos\\DeltaIntensity\\DeltaIntensity.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\David\\Documents\\Delta-Intensity\\DeltaIntensity.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\David\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.17\\microsoft.windowsdesktop.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\David\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.17\\microsoft.netcore.app.ref.7.0.17.nupkg.sha512",
+    "C:\\Users\\David\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.17\\microsoft.aspnetcore.app.ref.7.0.17.nupkg.sha512"
+  ],
   "logs": []
 }

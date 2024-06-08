@@ -8,38 +8,38 @@
     ".NETCoreApp,Version=v7.0": {
       "DeltaIntensity/1.0.0": {
         "dependencies": {
-          "ATAS.Indicators": "6.1.1.309",
-          "ATAS.Indicators.Other": "6.1.1.309",
-          "ATAS.Indicators.Technical": "6.1.1.309",
+          "ATAS.Indicators": "6.1.3.216",
+          "ATAS.Indicators.Other": "6.1.3.216",
+          "ATAS.Indicators.Technical": "6.1.3.216",
           "OFT.Attributes": "1.0.0.0",
-          "OFT.Rendering": "6.1.1.309",
+          "OFT.Rendering": "6.1.3.216",
           "PresentationCore": "3.0.0.0"
         },
         "runtime": {
           "DeltaIntensity.dll": {}
         }
       },
-      "ATAS.Indicators/6.1.1.309": {
+      "ATAS.Indicators/6.1.3.216": {
         "runtime": {
           "ATAS.Indicators.dll": {
-            "assemblyVersion": "6.1.1.309",
-            "fileVersion": "6.1.1.309"
+            "assemblyVersion": "6.1.3.216",
+            "fileVersion": "6.1.3.216"
           }
         }
       },
-      "ATAS.Indicators.Other/6.1.1.309": {
+      "ATAS.Indicators.Other/6.1.3.216": {
         "runtime": {
           "ATAS.Indicators.Other.dll": {
-            "assemblyVersion": "6.1.1.309",
-            "fileVersion": "6.1.1.309"
+            "assemblyVersion": "6.1.3.216",
+            "fileVersion": "6.1.3.216"
           }
         }
       },
-      "ATAS.Indicators.Technical/6.1.1.309": {
+      "ATAS.Indicators.Technical/6.1.3.216": {
         "runtime": {
           "ATAS.Indicators.Technical.dll": {
-            "assemblyVersion": "6.1.1.309",
-            "fileVersion": "6.1.1.309"
+            "assemblyVersion": "6.1.3.216",
+            "fileVersion": "6.1.3.216"
           }
         },
         "resources": {
@@ -59,11 +59,11 @@
           }
         }
       },
-      "OFT.Rendering/6.1.1.309": {
+      "OFT.Rendering/6.1.3.216": {
         "runtime": {
           "OFT.Rendering.dll": {
-            "assemblyVersion": "6.1.1.309",
-            "fileVersion": "6.1.1.309"
+            "assemblyVersion": "6.1.3.216",
+            "fileVersion": "6.1.3.216"
           }
         }
       },
@@ -91,11 +91,19 @@
           }
         }
       },
-      "ATAS.DataFeedsCore/6.1.1.309": {
+      "ATAS.DataFeedsCore/6.1.3.216": {
         "runtime": {
           "ATAS.DataFeedsCore.dll": {
-            "assemblyVersion": "6.1.1.309",
-            "fileVersion": "6.1.1.309"
+            "assemblyVersion": "6.1.3.216",
+            "fileVersion": "6.1.3.216"
+          }
+        }
+      },
+      "System.Drawing.Common/8.0.0.0": {
+        "runtime": {
+          "System.Drawing.Common.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.224.6803"
           }
         }
       },
@@ -199,6 +207,14 @@
           }
         }
       },
+      "Microsoft.Win32.SystemEvents/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
       "System.Configuration.ConfigurationManager/4.0.1.0": {
         "runtime": {
           "System.Configuration.ConfigurationManager.dll": {
@@ -223,17 +239,17 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ATAS.Indicators/6.1.1.309": {
+    "ATAS.Indicators/6.1.3.216": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "ATAS.Indicators.Other/6.1.1.309": {
+    "ATAS.Indicators.Other/6.1.3.216": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
     },
-    "ATAS.Indicators.Technical/6.1.1.309": {
+    "ATAS.Indicators.Technical/6.1.3.216": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -243,7 +259,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "OFT.Rendering/6.1.1.309": {
+    "OFT.Rendering/6.1.3.216": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -263,7 +279,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ATAS.DataFeedsCore/6.1.1.309": {
+    "ATAS.DataFeedsCore/6.1.3.216": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Drawing.Common/8.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""
@@ -314,6 +335,11 @@
       "sha512": ""
     },
     "System.Security.Cryptography.ProtectedData/7.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Win32.SystemEvents/8.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

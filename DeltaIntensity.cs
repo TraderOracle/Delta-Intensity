@@ -51,9 +51,9 @@
             DataSeries.Add(_VolSecPos);
             DataSeries.Add(_VolSecNeg);
 
-            DataSeries.Add(_Weird);
-            DataSeries.Add(_DeltaDivRed);
-            DataSeries.Add(_DeltaDivGreen);
+            //DataSeries.Add(_Weird);
+            //DataSeries.Add(_DeltaDivRed);
+            //DataSeries.Add(_DeltaDivGreen);
         }
 
         protected override void OnCalculate(int bar, decimal value)
@@ -66,36 +66,39 @@
             value = candle.Close;
             var red = candle.Close < candle.Open;
             var green = candle.Close > candle.Open;
-
-            var candleSeconds = Convert.ToDecimal((candle.LastTime - candle.Time).TotalSeconds);
-            if (candleSeconds is 0)
-                candleSeconds = 1;
-            var volPerSecond = candle.Volume / candleSeconds;
-
-            var deltaPer = candle.Delta > 0 ? (candle.Delta / candle.MaxDelta) : (candle.Delta / candle.MinDelta);
-
-            var deltaIntense = Math.Abs((candle.Delta * deltaPer) * volPerSecond);
-            var deltaShaved = candle.Delta * deltaPer;
-
-            if (deltaIntense > iBigTrades)
+             
+            if (candle.Delta != null and candle.MinDelta != null and candle.MaxDelta != null)
             {
-                if (candle.Delta > 0)
-                    _VolSecPos[bar] = deltaShaved; // volPerSecond * 1000;
+                var candleSeconds = Convert.ToDecimal((candle.LastTime - candle.Time).TotalSeconds);
+                if (candleSeconds is 0)
+                    candleSeconds = 1;
+                var volPerSecond = candle.Volume / candleSeconds;
+
+                var deltaPer = candle.Delta > 0 ? (candle.Delta / candle.MaxDelta) : (candle.Delta / candle.MinDelta);
+
+                var deltaIntense = Math.Abs((candle.Delta * deltaPer) * volPerSecond);
+                var deltaShaved = candle.Delta * deltaPer;
+
+                if (deltaIntense > iBigTrades)
+                {
+                    if (candle.Delta > 0)
+                        _VolSecPos[bar] = deltaShaved; // volPerSecond * 1000;
+                    else
+                        _VolSecNeg[bar] = deltaShaved * -1; // volPerSecond * 1000;
+                }
                 else
-                    _VolSecNeg[bar] = deltaShaved * -1; // volPerSecond * 1000;
-            }
-            else
-            {
-                if (candle.Delta > 0)
-                    _posSeries[bar] = deltaShaved;
-                else
-                    _negSeries[bar] = deltaShaved * -1;
+                {
+                    if (candle.Delta > 0)
+                        _posSeries[bar] = deltaShaved;
+                    else
+                        _negSeries[bar] = deltaShaved * -1;
+                }
             }
 
-            if (candle.Delta > 0 && red)
-              _DeltaDivRed[bar] = 500;
-            if (candle.Delta < 0 && green)
-              _DeltaDivGreen[bar] = 500;
+            //if (candle.Delta > 0 && red)
+            //  _DeltaDivRed[bar] = 500;
+            //if (candle.Delta < 0 && green)
+            //  _DeltaDivGreen[bar] = 500;
 
         }
 

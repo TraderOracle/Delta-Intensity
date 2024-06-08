@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DeltaIntensity")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f47d77c34dad1cf5b94649065c0236ffb0194a5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("DeltaIntensity")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DeltaIntensity")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
